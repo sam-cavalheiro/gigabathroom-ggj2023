@@ -15,10 +15,13 @@ public class PauseUI : MonoBehaviour
     void Update()
     {
         if (playerInput.Player.PauseGame.triggered)
-        {
-            pauseUiRootGo.SetActive(!pauseUiRootGo.activeSelf);
-            Time.timeScale = pauseUiRootGo.activeSelf ? 0f : 1f;
-        }
+            PauseOrUnpause();
+    }
+
+    public void PauseOrUnpause()
+    {
+        pauseUiRootGo.SetActive(!pauseUiRootGo.activeSelf);
+        Time.timeScale = pauseUiRootGo.activeSelf ? 0f : 1f;
     }
 
     private void OnEnable()

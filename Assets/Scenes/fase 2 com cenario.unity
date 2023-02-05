@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657695, g: 0.4964105, b: 0.5748163, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657707, g: 0.49641097, b: 0.57481605, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11951,7 +11951,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1991139372}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &698425227
 BoxCollider:
@@ -34784,9 +34784,9 @@ Transform:
   - {fileID: 2057594408}
   - {fileID: 2092701605}
   - {fileID: 199685472}
+  - {fileID: 698425226}
   - {fileID: 906500225}
   - {fileID: 1518120409}
-  - {fileID: 698425226}
   - {fileID: 1798488370}
   - {fileID: 318304579}
   - {fileID: 1193526442}

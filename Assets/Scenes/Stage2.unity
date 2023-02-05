@@ -33481,6 +33481,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 117141130}
     m_Modifications:
+    - target: {fileID: 7834159380032744384, guid: ffc2351f16e64414db1caa109cb9d0ba, type: 3}
+      propertyPath: m_Size.x
+      value: 0.034614343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834159380032744384, guid: ffc2351f16e64414db1caa109cb9d0ba, type: 3}
+      propertyPath: m_Size.z
+      value: 0.023071935
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834159380032744384, guid: ffc2351f16e64414db1caa109cb9d0ba, type: 3}
+      propertyPath: m_Center.x
+      value: -0.01483778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834159380032744384, guid: ffc2351f16e64414db1caa109cb9d0ba, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0000057743155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834159380032744384, guid: ffc2351f16e64414db1caa109cb9d0ba, type: 3}
+      propertyPath: m_Center.z
+      value: 0.008771529
+      objectReference: {fileID: 0}
     - target: {fileID: 8553786125167243944, guid: ffc2351f16e64414db1caa109cb9d0ba, type: 3}
       propertyPath: m_Name
       value: parede  (44)

@@ -90,14 +90,14 @@ public class Player : MonoBehaviour
     }
 
     public void Die ()
-    {
-        _active = false;
-        _collider.enabled = false;
-        playerVelocity.y = 0f;
-        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue /2);
-        StartCoroutine(routine: Respawn());
-        Debug.Log("morreu");
-    }
+   {
+    _active = false;
+    _collider.enabled = false;
+    playerVelocity.y = 0f;
+    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
+    StartCoroutine(routine: Respawn());
+    transform.position = new Vector3(0, 0, 0);
+   }
 
     private IEnumerator Respawn()
     {

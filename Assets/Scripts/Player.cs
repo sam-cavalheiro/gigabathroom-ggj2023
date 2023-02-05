@@ -9,8 +9,6 @@ public class Player : MonoBehaviour
     private Collider _collider;
     private Vector3 _respawnPoint;
     public AudioSource footstepsSound;
-
-   
     
 
 
@@ -38,7 +36,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<Collider>();
-        //SetRespawnPoint((Vector3)transform.position);
+        SetRespawnPoint((Vector3)transform.position);
         
     }
 
@@ -90,10 +88,10 @@ public class Player : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-       
+        
     }
 
-   /* private void OnEnable()
+    private void OnEnable()
     {
         playerImput.Enable();
     }
@@ -101,34 +99,32 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         playerImput.Disable();
-    }*/
+    }
 
-   // public void SetRespawnPoint(Vector3 position)
-   // {
-//        _respawnPoint = (Vector3)position;
-  //  }
+    public void SetRespawnPoint(Vector3 position)
+    {
+        _respawnPoint = (Vector3)position;
+    }
 
-     
+    public void Die ()
+   {
+    _active = false;
+    _collider.enabled = false;
+    playerVelocity.y = 0f;
+    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
+    StartCoroutine(routine: Respawn());
+    transform.position = new Vector3(0, 0, 0);
+       
+   }
 
-
-  //  public void Die ()
-  // {
-  //  _active = false;
-  //  _collider.enabled = false;
-  //  playerVelocity.y = 0f;
-   // playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
-   // StartCoroutine(routine: Respawn());
-   // transform.position = new Vector3(0, 0, 0);   
-   //}
-
-   // private IEnumerator Respawn()
-   // {
-   //     yield return new WaitForSeconds(1f);
-   //     transform.position = (Vector3)_respawnPoint;
-    //    _active = true;
-   //     _collider.enabled = true;
-    //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
-   // }
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = (Vector3)_respawnPoint;
+        _active = true;
+        _collider.enabled = true;
+        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
+    }
 
 
 

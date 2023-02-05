@@ -1143,8 +1143,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1894218343}
-  m_Follow: {fileID: 1894218343}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 891275699}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -1402,7 +1402,7 @@ Transform:
   - {fileID: 33511989}
   - {fileID: 557078201}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638655911
 GameObject:
@@ -2145,6 +2145,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838723400}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &891275699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8581182757270370435, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}
+  m_PrefabInstance: {fileID: 9061846357878037158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &906500224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5049,11 +5054,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884853558}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1894218343 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9061846358148489409, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}
-  m_PrefabInstance: {fileID: 9061846357878037158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1991139366
 GameObject:
   m_ObjectHideFlags: 0

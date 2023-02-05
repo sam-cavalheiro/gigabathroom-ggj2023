@@ -2105,8 +2105,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1894218343}
-  m_Follow: {fileID: 1894218343}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 1100496489}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -3036,7 +3036,7 @@ Transform:
   - {fileID: 33511989}
   - {fileID: 557078201}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638655911
 GameObject:
@@ -4688,6 +4688,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &1100496489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8581182757270370435, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}
+  m_PrefabInstance: {fileID: 9061846357878037158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1100564786
 Mesh:
   m_ObjectHideFlags: 0
@@ -10886,16 +10891,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &1894218343 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9061846358148489409, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}
-  m_PrefabInstance: {fileID: 9061846357878037158}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1894218350 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1731126538720979037, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}
-  m_PrefabInstance: {fileID: 9061846357878037158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1896014771
 GameObject:
   m_ObjectHideFlags: 0
@@ -12524,6 +12519,6 @@ PrefabInstance:
     - target: {fileID: 9061846358148489421, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}
       propertyPath: morreu
       value: 
-      objectReference: {fileID: 1894218350}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d4060aecf5dcfcb7988cff455314d01, type: 3}

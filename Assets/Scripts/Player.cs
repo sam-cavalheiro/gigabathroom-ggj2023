@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playerSpeed = 2.0f;
     [SerializeField]
-    private float jumpHeight = 1.0f;
+    private float jumpHeight = 5.0f;
     private float gravityValue = -9.81f;
 
 
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
         // Changes the height position of the player..
         if (playerImput.Player.Jump.triggered && groundedPlayer)
         {
+            //playerVelocity.y = 0f;
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 

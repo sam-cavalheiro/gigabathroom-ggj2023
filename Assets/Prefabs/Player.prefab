@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b812fbff4a3738a43ba719b0b291e93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathAudioSource: {fileID: 8581182757270370442}
   footstepsSound: {fileID: 8581182757270370444}
   groundedPlayer: 0
   playerSpeed: 15
@@ -550,11 +551,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8581182758483577981}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a75657354e98b9d4597bff5443808f20, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

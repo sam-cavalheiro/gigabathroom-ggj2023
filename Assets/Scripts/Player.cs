@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource deathAudioSource;
 
     private PlayerInput playerImput;
     private Collider _collider;
     private Vector3 _respawnPoint;
     public AudioSource footstepsSound;
-    
+
 
 
     private CharacterController controller;
@@ -22,7 +24,7 @@ public class Player : MonoBehaviour
     private float jumpHeight = 5.0f;
     [SerializeField]
     private float gravityValue = -20f;
-    [SerializeField] 
+    [SerializeField]
     private bool _active = true;
 
 
@@ -37,12 +39,12 @@ public class Player : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         SetRespawnPoint((Vector3)transform.position);
-        
+
     }
 
     void Update()
     {
-    
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -70,11 +72,11 @@ public class Player : MonoBehaviour
         Vector2 movementInput = playerImput.Player.Move.ReadValue<Vector2>();
         Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y);
         controller.Move(move * Time.deltaTime * playerSpeed);
-        
+
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
-            
+
 
         }
 
@@ -88,7 +90,7 @@ public class Player : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        
+
     }
 
     private void OnEnable()
@@ -106,16 +108,18 @@ public class Player : MonoBehaviour
         _respawnPoint = (Vector3)position;
     }
 
-    public void Die ()
-   {
-    _active = false;
-    _collider.enabled = false;
-    playerVelocity.y = 0f;
-    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
-    StartCoroutine(routine: Respawn());
-    transform.position = new Vector3(0, 0, 0);
-       
-   }
+    public void Die()
+    {
+        _active = false;
+        _collider.enabled = false;
+        playerVelocity.y = 0f;
+        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
+        StartCoroutine(routine: Respawn());
+        transform.position = new Vector3(0, 0, 0);
+        if (deathAudioSource != null)
+            deathAudioSource.Play();
+
+    }
 
     private IEnumerator Respawn()
     {

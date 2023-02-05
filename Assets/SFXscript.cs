@@ -11,13 +11,14 @@ public class SFXscript : MonoBehaviour
     public static SFXscript sfxInstance;
     private void Awake()
     {
-        if (sfxInstance != null && sfxInstance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-
         sfxInstance = this;
-        DontDestroyOnLoad(this);
+        /* if (sfxInstance != null && sfxInstance != this)
+         {
+             Destroy(this.gameObject);
+             return;
+         }
+
+         sfxInstance = this;
+         DontDestroyOnLoad(this);*/
     }
 }

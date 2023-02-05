@@ -14,17 +14,18 @@ public class MainMenu : MonoBehaviour
 
     public void CreditsScreen()
     {
-
+        SFXscript.sfxInstance.IniciodoJogo.PlayOneShot(SFXscript.sfxInstance.Click);
     }
 
     public void OptionsMenu()
     {
-
+        SFXscript.sfxInstance.IniciodoJogo.PlayOneShot(SFXscript.sfxInstance.Click);
     }
 
     public void QuitGame()
     {
         Debug.Log("QUIT!");
         Application.Quit();
+        SFXscript.sfxInstance.IniciodoJogo.PlayOneShot(SFXscript.sfxInstance.Click);
     }
 }

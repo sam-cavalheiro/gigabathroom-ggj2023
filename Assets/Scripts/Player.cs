@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     private PlayerInput playerImput;
     private Collider _collider;
     private Vector3 _respawnPoint;
-
+    public AudioSource footstepsSound;
 
 
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    public bool groundedPlayer;
 
     [SerializeField]
     private float playerSpeed = 2.0f;
@@ -53,14 +53,28 @@ public class Player : MonoBehaviour
             return;
         }
 
+        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        Vector3 direcao = new Vector3(horizontal, 0f, vertical);
+        if (direcao.magnitude > 0 && groundedPlayer)
+        {
+            footstepsSound.enabled = true;
+        }
+        else
+        {
+            footstepsSound.enabled = false;
+        }
+
 
         Vector2 movementInput = playerImput.Player.Move.ReadValue<Vector2>();
         Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y);
         controller.Move(move * Time.deltaTime * playerSpeed);
-
+        
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            
+
         }
 
         // Changes the height position of the player..
@@ -72,6 +86,8 @@ public class Player : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        
     }
 
     private void OnEnable()

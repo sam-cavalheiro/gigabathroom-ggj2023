@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class morte : MonoBehaviour
 {
+   
   private void OnTriggerEnter(Collider other)
   {
     Debug.Log(other.gameObject.name);
@@ -10,6 +11,7 @@ public class morte : MonoBehaviour
     if (Player != null)
     {
         Player.Die();
+        
     }
   }
 }

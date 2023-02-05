@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private Collider _collider;
     private Vector3 _respawnPoint;
     public AudioSource footstepsSound;
+    
 
 
     private CharacterController controller;
@@ -113,6 +114,7 @@ public class Player : MonoBehaviour
     playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
     StartCoroutine(routine: Respawn());
     transform.position = new Vector3(0, 0, 0);
+       
    }
 
     private IEnumerator Respawn()

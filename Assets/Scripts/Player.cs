@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         _active = false;
         _collider.enabled = false;
         playerVelocity.y = 0f;
-        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
+        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 4f);
         StartCoroutine(routine: Respawn());
         transform.position = new Vector3(0, 0, 0);
         if (deathAudioSource != null)

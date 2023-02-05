@@ -3,7 +3,7 @@ using UnityEngine;
 public class morte : MonoBehaviour
 {
    
-  private void OnTriggerEnter(Collider other)
+ /* private void OnTriggerEnter(Collider other)
   {
     Debug.Log(other.gameObject.name);
     var Player = other.gameObject.GetComponent<Player>();
@@ -13,5 +13,5 @@ public class morte : MonoBehaviour
         Player.Die();
         
     }
-  }
+  }*/
 }

@@ -96,6 +96,7 @@ public class Player : MonoBehaviour
         playerVelocity.y = 0f;
         playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue /2);
         StartCoroutine(routine: Respawn());
+        Debug.Log("morreu");
     }
 
     private IEnumerator Respawn()

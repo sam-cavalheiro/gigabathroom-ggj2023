@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PlayerLife : MonoBehaviour
 {
     public int Lifes { get => lives; private set => lives = value; }
+    [SerializeField] int gameOverSceneId;
     [SerializeField] int lives;
     public UnityEvent onPlayerChangeLife = new UnityEvent();
 
@@ -15,6 +16,6 @@ public class PlayerLife : MonoBehaviour
         onPlayerChangeLife.Invoke();
 
         if (lives < 0)
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(gameOverSceneId);
     }
 }

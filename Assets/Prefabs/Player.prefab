@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6184c38e2cc04465ac1d83a451d9565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverSceneId: 3
   lives: 5
   onPlayerChangeLife:
     m_PersistentCalls:

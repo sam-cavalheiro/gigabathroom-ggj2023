@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private PlayerInput playerImput;
     private Collider _collider;
     private Vector3 _respawnPoint;
+    PlayerLife playerLife;
     public AudioSource footstepsSound;
 
 
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<Collider>();
+        playerLife = GetComponent<PlayerLife>();
         SetRespawnPoint((Vector3)transform.position);
 
     }
@@ -118,6 +120,8 @@ public class Player : MonoBehaviour
         transform.position = new Vector3(0, 0, 0);
         if (deathAudioSource != null)
             deathAudioSource.Play();
+
+        playerLife.ChangeOneLife(false);
 
     }
 

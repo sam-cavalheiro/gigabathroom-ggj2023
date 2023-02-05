@@ -29,4 +29,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         SFXscript.sfxInstance.IniciodoJogo.PlayOneShot(SFXscript.sfxInstance.Click);
     }
+
+    public void TitleScreen()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
 }

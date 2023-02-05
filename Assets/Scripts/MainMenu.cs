@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public void OptionsMenu()
     {
         SFXscript.sfxInstance.IniciodoJogo.PlayOneShot(SFXscript.sfxInstance.Click);
+        Application.Quit();
     }
 
     public void QuitGame()

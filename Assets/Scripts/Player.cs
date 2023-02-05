@@ -13,14 +13,14 @@ public class Player : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 playerVelocity;
-    [SerializeField]
     private bool groundedPlayer;
 
     [SerializeField]
     private float playerSpeed = 2.0f;
     [SerializeField]
     private float jumpHeight = 5.0f;
-    private float gravityValue = -9.81f;
+    [SerializeField]
+    private float gravityValue = -20f;
     [SerializeField] 
     private bool _active = true;
 

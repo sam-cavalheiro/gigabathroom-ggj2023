@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
 
     private PlayerInput playerImput;
+    private Collider _collider;
+    private Vector3 _respawnPoint;
 
 
 
@@ -19,6 +21,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float jumpHeight = 5.0f;
     private float gravityValue = -9.81f;
+    [SerializeField] 
+    private bool _active = true;
 
 
 
@@ -30,6 +34,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        _collider = GetComponent<Collider>();
+        SetRespawnPoint((Vector3)transform.position);
     }
 
     void Update()
@@ -39,6 +45,11 @@ public class Player : MonoBehaviour
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
+        }
+
+        if (!_active)
+        {
+            return;
         }
 
 
@@ -72,8 +83,28 @@ public class Player : MonoBehaviour
         playerImput.Disable();
     }
 
+    public void SetRespawnPoint(Vector3 position)
+    {
+        _respawnPoint = (Vector3)position;
+    }
 
+    public void Die ()
+    {
+        _active = false;
+        _collider.enabled = false;
+        playerVelocity.y = 0f;
+        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue /2);
+        StartCoroutine(routine: Respawn());
+    }
 
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = (Vector3)_respawnPoint;
+        _active = true;
+        _collider.enabled = true;
+        playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue / 2);
+    }
 
 
 

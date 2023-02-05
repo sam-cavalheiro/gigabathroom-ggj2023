@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class morte : MonoBehaviour
 {
-  private void OnCollissionEnter(Collision other)
+  private void OnTriggerEnter(Collider other)
   {
-    var Player = other.collider.GetComponent<Player>();
+    Debug.Log(other.gameObject.name);
+    var Player = other.gameObject.GetComponent<Player>();
     if (Player != null)
     {
         Player.Die();

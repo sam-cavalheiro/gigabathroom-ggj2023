@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         SetRespawnPoint((Vector3)transform.position);
+        
     }
 
     void Update()
